@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.css">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+
+        <title>Clothing Store</title>
+    </head>
+    <body>
+      <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+                <span class="icon-bar"></span> 
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a href="main.html" class="navbar-brand">ShopieStore</a>
+            </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav">
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                    <li><a href="about.html">About</a></li>  
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                  <li class="nav navbar-left"><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Signup</a></li>
+                  </ul>
+              </div>
+        </div>
+      </nav>
+        
+        <div class="content">
+            <div class="container">
+            <h4 style="color:#2ADccc">We take great pride in our timely and professional customer service, and are happy to answer any questions you may have over the phone.</h4>
+            <!--    <div class="jumbotron" style="text-align:center">
+                  ADDRESS: <h3>Cloth Store<br />
+                   1750 Vine St<br />
+                   Los Angeles, CA</h3>
+                <h3>info@clothingstore</h3>
+                    </div>-->
+                <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well well-sm">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <legend class="text-center header">Contact us</legend>
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-1">
+                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-1">
+                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-1">
+                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-1">
+                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-1">
+                                <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <div class="panel panel-default">
+                    <div class="text-center header">Our Office</div>
+                    <div class="panel-body text-center">
+                        <h4>Address</h4>
+                        <div>
+                        2217 Washington Blvd<br />
+                        Washington DC<br />
+                        #(703) 1234 1234<br />
+                        service@company.com<br />
+                        </div>
+                        <hr />
+                        <div id="map1" class="map">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+          
+        </div>
+
+<!--<script src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf_BW2EjRu_qznhIIdvNhnjJLBCYvi3nw&callback=initMap"
+  type="text/javascript"></script>
+        <script>
+            'use strict';
+           document.addEventListener('DOMContentLoaded', initMap);
+            var map;
+             function initMap(){
+                 var myLatLng = new google.maps.LatLng(39.2795373, -81.6075474);
+                var mapOptions = {
+                    center: myLatLng,
+                      'zoom' : 14,
+                      'mapTypeId' : google.maps.MapTypeId.ROADMAP
+                      
+                };
+                map = new google.maps.Map(document.getElementById("map1"), mapOptions);
+                 
+                 var marker = new google.maps.Marker({
+                      position: myLatLng,
+                      map: map,
+                      title: 'Find us here!'
+                    });
+                 
+                 var popupContent = 'Visit us at Washington Blvd<br />';
+                     popupContent += 'Washington DC';
+                 
+                 var infowindow = new google.maps.InfoWindow({
+                      content: popupContent,
+                      maxWidth: 200
+                    });
+                 
+                 marker.addListener('click', function() {
+                      infowindow.open(map, marker);
+                    });
+            }
+            
+        </script>
+
+
+<!--
+<script type="text/javascript">
+    jQuery(function ($) {
+        function initMap() {
+            var myLocation = new google.maps.LatLng(38.885516, -77.09327200000001);
+            var mapOptions = {
+                center: myLocation,
+                zoom: 16
+            };
+            var marker = new google.maps.Marker({
+                position: myLocation,
+                title: "Property Location"
+            });
+            var map = new google.maps.Map(document.getElementById("map1"),
+                mapOptions);
+            marker.setMap(map);
+        }
+        initMap();
+    });
+</script>
+-->
+
+
+<style>
+    .map {
+        min-width: 300px;
+        min-height: 300px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .header {
+        background-color: #F5F5F5;
+        color: #36A0FF;
+        height: 70px;
+        font-size: 27px;
+        padding: 10px;
+    }
+</style>
+        <div class="jumbotron">
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+         <footer>
+          <div class="footiedata">
+          <div class="container">
+              <h1 class="mainhead">Stay in the know</h1>
+              <p class="signtext">Subscribe for updates on shopiestore</p>
+              
+              <form class="formlist">
+                    <div class="form-inline">
+                        <input type="email" class="form-control" id="footform" placeholder="Enter your email" aria-required="true">
+                  
+                        <button type="submit" class="subs">SUBSCRIBE</button>
+                    </div>
+                    
+                </form>
+              
+              <div class="flexylist">
+                  
+                   <ul class="flexcont">
+                       <li>Jeans</li>
+                       <li>Shoes</li>
+                       <li>Home Decor</li>
+                       <li>Gym Wear</li>
+                       <li>Jewellery</li>
+              </ul>
+                  <ul class="flexcont1">
+                      <li>Toys</li>
+                      <li>Kids wear</li>
+                      <li>Tops</li>
+                      <li>Books</li>
+                      <li>Mobiles</li>
+                  </ul>
+                  
+          </div>
+              </div>
+              </div>
+          <div class="bottomsecond">
+            <div class="copee">&copy; 2015 SlideRule. All rights reserved.Regulatory Information | Terms | Privacy
+            </div>
+          </div>
+        </footer>
+   
+        
+    </body>
+</html>
